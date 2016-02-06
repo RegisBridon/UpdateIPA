@@ -34,7 +34,6 @@ class UpdateIPA
     var m_identity : String?              // the idendity to use when signing
     var m_provisioning : String?               // the provisioning profile name to use when signing
     
-
     // MARK: - General methods   
     init()
     {
@@ -100,9 +99,9 @@ class UpdateIPA
             printHelp()
             exit(1)
         }
-        if m_identity==nil
+        if m_identity==nil || m_provisioning == nil
         {
-            printStderr("UpdateIPA expects an identity (a GUID or a name)")
+            printStderr("UpdateIPA expects an identity AND a provisioning profile in order to re-sign the IPA")
             printHelp()
             exit(1)
         }
@@ -202,8 +201,6 @@ class UpdateIPA
                 ext += String(newLine[index])
                 index++
             }
-            
-            
             if guid.length != 40
             {
                 continue
@@ -458,7 +455,13 @@ class UpdateIPA
             // Copy the files to the bundle directory (if any)
             for file in m_copyFiles
             {
-                try NSFileManager.defaultManager().copyItemAtPath(file, toPath: newApplicationPath.stringByAppendingPathComponent(file.lastPathComponent))
+                let destinationPath = newApplicationPath.stringByAppendingPathComponent(file.lastPathComponent)
+                do 
+                {
+                    try NSFileManager.defaultManager().removeItemAtPath(destinationPath)
+                }
+                catch {}
+                try NSFileManager.defaultManager().copyItemAtPath(file, toPath: destinationPath)
             }
         
             // Verify the current identity
