@@ -21,7 +21,6 @@
 /* Begin PBXFileReference section */
 		5C1FB5121C657353003C5913 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		5C1FB5131C657353003C5913 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		5C1FB5141C657353003C5913 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5C1FB5151C657353003C5913 /* String+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extended.swift"; sourceTree = "<group>"; };
 		5C1FB5161C657353003C5913 /* UpdateIPA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateIPA.swift; sourceTree = "<group>"; };
 		5C9B98C21C5AC344001EB75F /* updateIPA */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = updateIPA; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,7 +42,6 @@
 			children = (
 				5C1FB5121C657353003C5913 /* LICENSE.txt */,
 				5C1FB5131C657353003C5913 /* main.swift */,
-				5C1FB5141C657353003C5913 /* README.md */,
 				5C1FB5151C657353003C5913 /* String+Extended.swift */,
 				5C1FB5161C657353003C5913 /* UpdateIPA.swift */,
 			);
